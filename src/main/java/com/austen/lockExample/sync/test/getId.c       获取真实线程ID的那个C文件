@@ -1,0 +1,11 @@
+#include<pthread.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include "Example4Start.h"
+ 
+
+JNIEXPORT void JNICALL Java_Example4Start_tid(JNIEnv *env, jobject c1){
+	
+	printf("current tid:%lu-----\n",pthread_self());
+	usleep(700);
+} 

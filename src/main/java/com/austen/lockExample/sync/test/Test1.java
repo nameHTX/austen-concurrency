@@ -1,14 +1,16 @@
-package com.austen.lockExample.sync;
+package com.austen.lockExample.sync.test;
 
 /**
  * @author Austen.Huang
  * @date 2020/8/5
+ *
+ * 重量级锁
  */
-public class Test {
+public class Test1 {
     private Object o = new Object();
 
     public static void main(String[] args) {
-        Test test = new Test();
+        Test1 test = new Test1();
         test.start();
     }
 
