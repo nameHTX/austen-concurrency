@@ -15,18 +15,20 @@ public class Demo {
 		BlockingQueue<String> strings = new SynchronousQueue<>();
 		
 		new Thread(()->{
-			try {
-				System.out.println(strings.take());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		    for(;;){
+                try {
+                    System.out.println(strings.take());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
 		}).start();
 //		strings.add("aaa");
 		strings.put("aaa");
-		strings.put("aaa");
-		strings.put("aaa");
-		strings.put("aaa");
-		strings.put("aaa");
+		strings.put("bbb");
+		strings.put("ccc");
+		strings.put("ddd");
+		strings.put("eee");
 		System.out.println(strings.size());
 	}
 }
