@@ -28,6 +28,7 @@ public class Test {
                     try {
                         Thread.sleep(100000);
                     } catch (InterruptedException e) {
+                        System.out.println(this.isInterrupted());
                         System.out.println("sleep的情况下，中断了线程抛这个错误");
                         return;
                     }
