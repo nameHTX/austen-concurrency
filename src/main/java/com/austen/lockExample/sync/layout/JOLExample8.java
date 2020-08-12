@@ -2,6 +2,8 @@ package com.austen.lockExample.sync.layout;
 import org.openjdk.jol.info.ClassLayout;
 
 /**
+ * @author Austen.Huang
+ * @date 2020/8/12
  * 一旦对象进行hashCode计算，就不能变成偏向锁
  */
 public class JOLExample8 {
