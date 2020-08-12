@@ -18,7 +18,7 @@ import org.openjdk.jol.info.ClassLayout;
  *       8     4        (object header)                           92 c3 00 f8 (10010010 11000011 00000000 11111000) (-134167662)
  *      12     4        (loss due to the next object alignment)
  *
- *  所以偏向锁是 0 0000 1 01
+ *  偏向锁：javaThread*:54 epoch:2 unused:1 age:4 1 01
  */
 public class JOLExample3 {
 

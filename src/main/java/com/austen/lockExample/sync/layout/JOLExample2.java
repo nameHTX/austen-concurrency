@@ -29,7 +29,7 @@ import org.openjdk.jol.info.ClassLayout;
  *  00110000--30
  *  剩下的：00000001  unused->0 gc->0000 biased(偏向)->0 lock(对象的状态)->01
  *
- *  无锁：
+ *  无锁：unused:25 hash:31 unused:1 age:4 0 01
  */
 public class JOLExample2 {
 

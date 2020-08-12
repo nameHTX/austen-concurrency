@@ -5,5 +5,5 @@ package com.austen.lockExample.sync.layout;
  * @date 2020/8/10
  */
 public class A {
-//    boolean flag = false;
+    private boolean flag = false;
 }

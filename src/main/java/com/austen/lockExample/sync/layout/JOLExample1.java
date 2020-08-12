@@ -10,7 +10,7 @@ import org.openjdk.jol.vm.VM;
  */
 public class JOLExample1 {
 
-    static A a = new A();
+    private static A a = new A();
 
     public static void main(String[] args) {
 
