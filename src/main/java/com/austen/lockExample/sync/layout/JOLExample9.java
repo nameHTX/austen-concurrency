@@ -17,6 +17,18 @@ import static java.lang.System.out;
  * 如果锁在同一个线程的同一个对象一直膨胀，jvm对这个线程的这个对象的偏向锁进行批量重偏向
  * （因为锁的膨胀很耗费资源）
  * 第20个包括第20个开始，都重偏向第二个线程，之前的都是轻量级锁
+ *
+ *
+ * 原理：以class为单位，为每个class维护一个偏向锁撤销计数器（epoch），
+ * 每次该class的对象发生偏向撤销操作时，该计数器+1，
+ * 当这个值达到重偏向阈值（默认20）时，JVM就认为该class的偏向锁有问题，
+ * 因此会进行批量重偏向。每个class对象会有一个对应的epoch字段。
+ * 每个处于偏向锁状态对象的mark word中也有该字段，其初始值为创建该对象时，
+ * class中的epoch的值。每次发生批量重偏向时，就将该值+1，同时遍历JVM中所有线程的栈，
+ * 找到该class所有正处于加锁状态的偏向锁，将其epoch字段改为新值。
+ * 下次获得锁时，发现当前对象的epoch值和class的epoch不相等，
+ * 那就算当前已经偏向了其他线程，也不会执行撤销操作，
+ * 而是直接通过CAS操作将其mark word的Thread Id改成当前线程Id
  */
 public class JOLExample9 {
     static List<A> list = new ArrayList<A>();
