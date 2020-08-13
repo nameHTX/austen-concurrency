@@ -4,7 +4,7 @@ package com.austen.lockExample.sync.test;
  * @author Austen.Huang
  * @date 2020/8/5
  *
- * 偏向锁
+ * 轻量级锁（因为没有设置偏向锁延迟为0）
  */
 public class Test2 {
 
